@@ -99,4 +99,73 @@ const playGame = function (rounds) {
     return console.log("Human Score: " + humanScore + " Computer Score: " + computerScore);
 }
 
-playGame(5);
+// playGame(5);
+
+const playRound = function(humanChoice, computerChoice) {
+    switch(humanChoice) {
+        case "Rock":
+            switch(computerChoice) {
+                case "Rock":
+                    console.log("It's a Draw! Rock can't beat Rock!");
+                    break;
+                case "Paper":
+                    console.log("You Lose! Paper beats Rock!");
+                    //computerScore++;
+                    break;
+                case "Scissors":
+                    console.log("You Win! Rock beats Scissors!");
+                    //humanScore++;
+                    break;
+            }
+            break;
+        case "Paper":
+            switch(computerChoice) {
+                case "Rock":
+                    console.log("You Win! Paper beats Rock!");
+                    //humanScore++;
+                    break;
+                case "Paper":
+                    console.log("It's a Draw! Paper can't beat Paper!");
+                    break;
+                case "Scissors":
+                    console.log("You Lose! Scissors beat Paper!");
+                    //computerScore++;
+                    break;
+            }
+            break;
+        case "Scissors":
+            switch(computerChoice) {
+                case "Rock":
+                    console.log("You Lose! Rock beats Scissors!");
+                    //computerScore++;
+                    break;
+                case "Paper":
+                    console.log("You Win! Scissors beat Paper!");
+                    //humanScore++;
+                    break;
+                case "Scissors":
+                    console.log("It's a Draw! Scissors can't beat Scissors!");
+                    break;
+            }
+        break;
+    } 
+}
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () => {
+    console.log("Played Rock");
+    playRound("Rock", getComputerChoice);
+});
+
+paper.addEventListener("click", () => {
+    console.log("Played Paper");
+    playRound("Paper", getComputerChoice);
+});
+
+scissors.addEventListener("click", () => {
+    console.log("Played Scissors");
+    playRound("Scissors", getComputerChoice);
+});
