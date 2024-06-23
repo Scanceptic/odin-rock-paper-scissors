@@ -29,6 +29,7 @@ const createResult = function(result) {
 const playRound = function(humanChoice, computerChoice) {
     switch(humanChoice) {
         case "Rock":
+            results.appendChild(createResult(`The Computer Played ${computerChoice}!`));
             switch(computerChoice) {
                 case "Rock":
                     results.appendChild(createResult("It's a Draw! Rock can't beat Rock!"));
@@ -44,6 +45,7 @@ const playRound = function(humanChoice, computerChoice) {
             }
             break;
         case "Paper":
+            results.appendChild(createResult(`The Computer Played ${computerChoice}!`));
             switch(computerChoice) {
                 case "Rock":
                     results.appendChild(createResult("You Win! Paper beats Rock!"));
@@ -59,6 +61,7 @@ const playRound = function(humanChoice, computerChoice) {
             }
             break;
         case "Scissors":
+            results.appendChild(createResult(`The Computer Played ${computerChoice}!`));
             switch(computerChoice) {
                 case "Rock":
                     results.appendChild(createResult("You Lose! Rock beats Scissors!"));
