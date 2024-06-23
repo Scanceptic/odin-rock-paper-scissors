@@ -15,6 +15,8 @@ const getComputerChoice = function() {
 let humanScore = 0;
 let computerScore = 0;
 
+let gameOver = false;
+
 const results = document.querySelector("#results");
 
 const createResult = function(result) {
@@ -93,7 +95,31 @@ const updateScore = function() {
             loss.style.fontSize = "36px";
             results.appendChild(loss);
         };
+        stopGame();
     };
+};
+
+const newGame = function() {
+    humanScore = 0;
+    computerScore = 0;
+    
+    updateScore();
+
+    const element = document.getElementById("results");
+
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    };
+
+    gameOver = false;
+};
+
+const stopGame = function() {
+    const restartGame = document.createElement("p");
+    restartGame.textContent = "Please click New Game in the top-right to play another game"
+    restartGame.style.fontWeight = "700";
+    results.appendChild(restartGame);
+    gameOver = true;
 };
 
 const rock = document.querySelector("#rock");
@@ -101,18 +127,35 @@ const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => {
-    playRound("Rock", getComputerChoice());
-    updateScore();
+    if (gameOver) {
+        return alert("Please start a new game to continue playing.");
+    } else {
+        playRound("Rock", getComputerChoice());
+        updateScore();
+    };
 });
 
 paper.addEventListener("click", () => {
-    playRound("Paper", getComputerChoice());
-    updateScore();
+    if (gameOver) {
+        return alert("Please start a new game to continue playing.");
+    } else {
+        playRound("Paper", getComputerChoice());
+        updateScore();
+    };
 });
 
 scissors.addEventListener("click", () => {
-    playRound("Scissors", getComputerChoice());
-    updateScore();
+    if (gameOver) {
+        return alert("Please start a new game to continue playing.");
+    } else {
+        playRound("Scissors", getComputerChoice());
+        updateScore();
+    };
 });
 
+const newgame = document.querySelector("#new-game");
+
+newgame.addEventListener("click", () => {
+    newGame();
+});
 
