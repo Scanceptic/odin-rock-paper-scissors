@@ -7,13 +7,13 @@ const getComputerChoice = function() {
     choiceVal = Math.floor(choiceVal);
     //console.log("Rounded number is " + choiceVal);
     if (choiceVal === 0) {
-        console.log("Computer chose rock")
+        //console.log("Computer chose Rock")
         return "Rock";
     } else if (choiceVal === 1) {
-        console.log("Computer chose paper");
+        //console.log("Computer chose Paper");
         return "Paper";
     } else if (choiceVal === 2) {
-        console.log("Computer chose scissors");
+        //console.log("Computer chose Scissors");
         return "Scissors";
     } else {
         return "Error";
@@ -179,15 +179,15 @@ const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => {
     console.log("Human Played Rock");
-    playRound("Rock", getComputerChoice);
+    playRound("Rock", getComputerChoice());
 });
 
 paper.addEventListener("click", () => {
     console.log("Human Played Paper");
-    playRound("Paper", getComputerChoice);
+    playRound("Paper", getComputerChoice());
 });
 
 scissors.addEventListener("click", () => {
     console.log("Human Played Scissors");
-    playRound("Scissors", getComputerChoice);
+    playRound("Scissors", getComputerChoice());
 });
