@@ -23,6 +23,11 @@ body {
     align-items: center;
 }
 
+#current-score {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
 .buttons {
     display: flex;
     justify-content: space-around;
