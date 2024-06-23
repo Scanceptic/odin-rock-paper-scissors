@@ -1,9 +1,26 @@
-h1 {
-    background-color: #CFCFCF;
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-p {
-    background-color: #AFAFAF;
+.intro {
+    background-color: lightcoral;
+    font-weight: 700;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons {

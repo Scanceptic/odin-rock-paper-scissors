@@ -36,7 +36,6 @@ const playRound = function(humanChoice, computerChoice) {
                     computerScore++;
                     break;
                 case "Scissors":
-                    //console.log("Scissors");
                     results.appendChild(createResult("You Win! Rock beats Scissors!"));
                     humanScore++;
                     break;
@@ -75,7 +74,9 @@ const playRound = function(humanChoice, computerChoice) {
     } 
 }
 
-
+const updateScore = function() {
+    
+}
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
